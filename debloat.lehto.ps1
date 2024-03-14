@@ -1,6 +1,6 @@
 ﻿Add-Type -AssemblyName System.Windows.Forms
 
-# Define the form
+# vorm define
 $form = New-Object System.Windows.Forms.Form
 $form.Text = "Windowsi debloatimine"
 $form.Size = New-Object System.Drawing.Size(600,480) # Suurendatud akna suurus
