@@ -1,6 +1,6 @@
 ﻿Add-Type -AssemblyName System.Windows.Forms
 
-# vorm define
+# define form
 $form = New-Object System.Windows.Forms.Form
 $form.Text = "Windowsi debloatimine"
 $form.Size = New-Object System.Drawing.Size(600,480) # Suurendatud akna suurus
@@ -9,14 +9,14 @@ $form.FormBorderStyle = "FixedDialog"
 $form.MaximizeBox = $false
 $form.MinimizeBox = $false
 
-# Silt
+# label
 $label = New-Object System.Windows.Forms.Label
 $label.Location = New-Object System.Drawing.Point(10,20)
 $label.Size = New-Object System.Drawing.Size(580,20) # Laiem label
 $label.Text = "Valige soovitud debloatimise valikud:"
 $form.Controls.Add($label)
 
-# valik kastid
+# check boxes
 $checkbox1 = New-Object System.Windows.Forms.CheckBox
 $checkbox1.Location = New-Object System.Drawing.Point(20,50)
 $checkbox1.Size = New-Object System.Drawing.Size(300,20)
@@ -41,26 +41,26 @@ $checkbox4.Size = New-Object System.Drawing.Size(300,20)
 $checkbox4.Text = "Aktiveeri tumedam teema"
 $form.Controls.Add($checkbox4)
 
-# kogu systeemi debloat
+# debloat whole system
 $checkbox5 = New-Object System.Windows.Forms.CheckBox
 $checkbox5.Location = New-Object System.Drawing.Point(20,170)
 $checkbox5.Size = New-Object System.Drawing.Size(300,20)
 $checkbox5.Text = "Debloati süsteem täielikult"
 $form.Controls.Add($checkbox5)
 
-# net frame 3.5 install valik kast
+# net frame 3.5 instal
 $button1 = New-Object System.Windows.Forms.Button
 $button1.Location = New-Object System.Drawing.Point(20,220) # Nupu asukoht muudetud
 $button1.Size = New-Object System.Drawing.Size(200,40)
 $button1.Text = "Installi .NET Framework 3.5"
 $button1.Add_Click({
-    # Käivita käsk .NET Framework 3.5 installimiseks
+    # activate .NET Framework 3.5 instal
     Enable-WindowsOptionalFeature -Online -FeatureName "NetFx3" -All -NoRestart
     [System.Windows.Forms.MessageBox]::Show(".NET Framework 3.5 installimine on lõpule viidud!", "Teade")
 })
 $form.Controls.Add($button1)
 
-# taasta debloat apid
+# restore debloat
 $button2 = New-Object System.Windows.Forms.Button
 $button2.Location = New-Object System.Drawing.Point(250,220) # Nupu asukoht muudetud
 $button2.Size = New-Object System.Drawing.Size(200,40)
@@ -72,7 +72,7 @@ $button2.Add_Click({
 })
 $form.Controls.Add($button2)
 
-# apply nupp
+# apply button
 $button3 = New-Object System.Windows.Forms.Button
 $button3.Location = New-Object System.Drawing.Point(190,280) # Nupu asukoht muudetud
 $button3.Size = New-Object System.Drawing.Size(120,40)
@@ -109,7 +109,7 @@ $button3.Add_Click({
 })
 $form.Controls.Add($button3)
 
-# taasta cortana
+# restore cortana
 $button4 = New-Object System.Windows.Forms.Button
 $button4.Location = New-Object System.Drawing.Point(380,50) # Nupu asukoht muudetud
 $button4.Size = New-Object System.Drawing.Size(200,30)
@@ -121,7 +121,7 @@ $button4.Add_Click({
 })
 $form.Controls.Add($button4)
 
-# taasta edge pdf
+# restore edge pdf
 $button5 = New-Object System.Windows.Forms.Button
 $button5.Location = New-Object System.Drawing.Point(380,90) # Nupu asukoht muudetud
 $button5.Size = New-Object System.Drawing.Size(200,30)
@@ -133,7 +133,7 @@ $button5.Add_Click({
 })
 $form.Controls.Add($button5)
 
-# taasta onedrive
+# restore onedrive
 $button6 = New-Object System.Windows.Forms.Button
 $button6.Location = New-Object System.Drawing.Point(380,130) # Nupu asukoht muudetud
 $button6.Size = New-Object System.Drawing.Size(200,30)
@@ -145,5 +145,5 @@ $button6.Add_Click({
 })
 $form.Controls.Add($button6)
 
-# ava form
+# open form
 $form.ShowDialog() | Out-Null
