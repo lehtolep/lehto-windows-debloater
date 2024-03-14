@@ -32,7 +32,7 @@ $form.Controls.Add($checkbox2)
 $checkbox3 = New-Object System.Windows.Forms.CheckBox
 $checkbox3.Location = New-Object System.Drawing.Point(20,110)
 $checkbox3.Size = New-Object System.Drawing.Size(300,20)
-$checkbox3.Text = "Eemalda Cortana"
+$checkbox3.Text = "Eemalda Cortana" (windows 10 only)
 $form.Controls.Add($checkbox3)
 
 $checkbox4 = New-Object System.Windows.Forms.CheckBox
